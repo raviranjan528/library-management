@@ -1,0 +1,30 @@
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><h1> All Bookss </h1></div>
+   
+    
+  <ul class="list-group user-list">
+  <button class="btn btn-default">
+                    <span title="Add new scale" ui-sref="admin.addBook" class="icon icon-user-add">Add New Book</span>
+                </button>
+  <!-- Table -->
+  <table class="table">
+  <tr>
+   <th>Book Name</th>
+   <th>Book Author</th>
+   <th>Avilable</th>
+   <th>Date of Arrival</th>
+   <th>Action</th>
+   </tr>
+   <tr ng-repeat="book in vm.bookData">
+     <td>{{book.bookname}}</td>
+     <td>{{book.bookAuthor}}</td>
+     <td>{{book.bookAvailability}}</td>
+     <td>{{book.createdAt | date}}</td>
+     <td>
+       <button ui-sref="admin.editBook({id: book._id})">Edit</button>
+     </td>
+   </tr>
+  </table>
+</div>

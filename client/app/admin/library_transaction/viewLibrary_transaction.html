@@ -1,0 +1,52 @@
+<!-- <div class="container">
+<h1> All Bookss </h1>
+  <ul class="list-group user-list">
+  <button class="btn btn-default">
+                    <span title="Add new scale" ui-sref="admin.addBook" class="icon icon-user-add">Add New Book</span>
+                </button>
+   <li class="list-group-item" ng-repeat="book in vm.libraryData">
+        <div class="user-info">
+            <strong>{{library.book.bookname}}</strong><br>
+            <span class="text-muted">{{library.member.username}}</span>
+        </div>
+       <a ui-sref="admin.editBook({id: book._id})" class="edit"><span class="fa fa-edit fa-2x"></span></a>&nbsp &nbsp
+
+       <a ng-click="admin.deleteBook(book._id)" class="trash"><span class="fa fa-trash fa-2x"></span></a>
+   </li>
+ </ul>
+</div> -->
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Library Transaction Details</div>
+   
+    <button class="btn btn-default">
+                    <span title="Add new scale" ui-sref="admin.addLibrary_transaction" class="icon icon-user-add">Add New Transaction</span>
+                </button>
+  <!-- Table -->
+  <table class="table">
+  <tr>
+   <th>Book Name</th>
+   <th>Usr Name</th>
+   <th>Status</th>
+   <th>Issued Date</th>
+   <th>Due Date</th>
+   <th>Action</th>
+   </tr>
+   <tr ng-repeat="library in vm.libraryData">
+     <td>{{library.book.bookname}}</td>
+     <td>{{library.member.username}}</td>
+     <td><select chosen="{width: '100%'}" name="status" class="form-control"
+              id="status"
+              ng-model="library.status"
+              data-placeholder="Select a Tansaction..." required>
+          <option value="issued">Re-Issue</option>
+          <option value="return">Return</option> 
+      </select></td>
+     <td>{{library.createdAt | date}}</td>
+     <td>{{library.lastDate | date}}</td>
+     <td>
+       <button ng-click="vm.updateBookTransaction(library.status, library._id)">Save</button>
+     </td>
+   </tr>
+  </table>
+</div>

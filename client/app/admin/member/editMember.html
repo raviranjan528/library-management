@@ -1,0 +1,25 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+			<h1> Update Member </h1>
+		</div>
+		<div class="col-sm-12">
+			<form class="form" name="memberForm" ng-submit="vm.updateMember()" novalidate>
+				
+				<div class="col-sm-6">
+					<md-input-container class="md-block">
+						<label>Member Name (Required)*</label>
+						<input type="text" name="name" ng-model="vm.member.name" ng-required="true" >
+						<div ng-messages="memberForm.name.$error">
+							<div ng-message="required">Member name is required.</div>
+						</div>
+					</md-input-container>
+				</div>
+
+				<div class="col-sm-12">
+					<button type="submit" ng-disabled="isDisabled || !memberForm.$valid" class="btn btn-info " type="submit">Update Now</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

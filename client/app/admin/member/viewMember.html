@@ -1,0 +1,31 @@
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><h1> All Users </h1></div>
+   
+    
+  <ul class="list-group user-list">
+  <button class="btn btn-default">
+                    <span title="Add new scale" ui-sref="admin.addMember" class="icon icon-user-add">Add New User</span>
+                </button>
+  <!-- Table -->
+  <table class="table">
+  <tr>
+   <th>User Name</th>
+   <th>Name</th>
+   <th>Email</th>
+   <th>Contact No</th>
+   <th>Date of Registeration</th>
+   <th>Action</th>
+   </tr>
+   <tr ng-repeat="member in vm.MemberData">
+     <td>{{member.username}}</td>
+     <td>{{member.name}}</td>
+     <td>{{member.email}}</td>
+     <td>{{member.contactNo}}</td>
+     <td>{{book.createdAt | date}}</td>
+     <td>
+       <button ui-sref="admin.editMember({id: member._id})">Edit</button>
+     </td>
+   </tr>
+  </table>
+</div>

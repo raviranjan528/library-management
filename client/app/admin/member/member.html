@@ -1,0 +1,47 @@
+<div class="container">
+ <div class="row">
+   <div class="col-sm-12">
+     <h1>User</h1>
+     <p>Add User Here!</p>
+   </div>
+   <div class="col-sm-12">
+     <form class="form" name="form" ng-submit="vm.SaveUserDetails(form)" novalidate>
+
+       <div class="form-group">
+         <label>UserName</label>
+
+         <input type="text" name="username" class="form-control" ng-model="vm.user.username" required>
+       </div>
+
+       <div class="form-group">
+         <label>Email</label>
+
+         <input type="email" name="email" class="form-control" ng-model="vm.user.email" required>
+       </div>
+        <div class="form-group">
+         <label>Name</label>
+
+         <input type="text" name="bookAuthor" class="form-control" ng-model="vm.user.name" required>
+       </div>
+
+       <div class="form-group">
+         <label>Contact No:-</label>
+
+         <input type="text" name="contactNo" class="form-control" ng-model="vm.user.contactNo" required>
+       </div>
+
+       
+       <div>
+         <button class="btn btn-inverse btn-lg btn-login" type="submit">
+           Save User Detail
+         </button>
+       </div>
+
+       <hr/>
+       <div class="row">
+       </div>
+     </form>
+   </div>
+ </div>
+ <hr>
+</div>

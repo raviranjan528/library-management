@@ -1,0 +1,25 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+			<h1> Update Book </h1>
+		</div>
+		<div class="col-sm-12">
+			<form class="form" name="bookForm" ng-submit="vm.updateBook()" novalidate>
+				
+				<div class="col-sm-6">
+					<md-input-container class="md-block">
+						<label>Book Name (Required)*</label>
+						<input type="text" name="bookName" ng-model="vm.book.bookname" ng-required="true" >
+						<div ng-messages="bookForm.bookName.$error">
+							<div ng-message="required">Book name is required.</div>
+						</div>
+					</md-input-container>
+				</div>
+
+				<div class="col-sm-12">
+					<button type="submit" ng-disabled="isDisabled || !bookForm.$valid" class="btn btn-info " type="submit">Update Now</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

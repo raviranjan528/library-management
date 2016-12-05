@@ -1,0 +1,47 @@
+<div class="container">
+ <div class="row">
+   <div class="col-sm-12">
+     <h1>Book</h1>
+     <p>Add Book Here!</p>
+   </div>
+   <div class="col-sm-12">
+     <form class="form" name="form" ng-submit="vm.SaveBookDetails(form)" novalidate>
+
+       <div class="form-group">
+         <label>Book Name</label>
+
+         <input type="text" name="bookName" class="form-control" ng-model="vm.user.bookname" required>
+       </div>
+
+       <div class="form-group">
+         <label>Book Author</label>
+
+         <input type="text" name="bookAuthor" class="form-control" ng-model="vm.user.bookAuthor" required>
+       </div>
+
+       <div class="form-group">
+         <label>Book Availability</label>
+         <select chosen="{width: '100%'}" name="status" class="form-control"
+              id="status"
+              ng-model="vm.user.bookAvailability"
+              data-placeholder="Select a Tansaction..." required>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option> 
+      </select>
+       </div>
+
+       
+       <div>
+         <button class="btn btn-inverse btn-lg btn-login" type="submit">
+           Save Book Detail
+         </button>
+       </div>
+
+       <hr/>
+       <div class="row">
+       </div>
+     </form>
+   </div>
+ </div>
+ <hr>
+</div>
